@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ==============================================
+HERO SECTION STYLES
+============================================== */
+.hero-slider {
+    position: relative;
+    height: calc(100vh - 120px);
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+.hero-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    transition: transform 3s ease-in-out;
+}
+
+.hero-slider .slide.active img {
+    transform: scale(1.0);
+}
+
+/* Hero Text & Search Container */
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Search Form */
+.search-form {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-form .input-group {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.search-form .form-control {
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: #fff;
+    flex-grow: 1;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.search-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+.search-form .search-btn {
+    border: none;
+    padding: 10px 25px;
+    background: linear-gradient(90deg, #28a745 0%, #218838 100%);
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.search-form .search-btn:hover {
+    background: linear-gradient(90deg, #218838 0%, #1e7e34 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.7);
+}
+
+.search-form .search-btn .me-2 {
+    margin-right: 0.5rem;
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.floating-whatsapp .whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.floating-whatsapp:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-10px);
+}
+
+.floating-whatsapp:hover {
+    background: #20BA5A;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Slider Indicators & Controls */
+.hero-slider .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.hero-slider .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-slider .indicator.active {
+    background: white;
+}
+
+.hero-slider .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 5;
+    transition: background 0.3s;
+    border-radius: 8px;
+}
+
+.hero-slider .controls:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-slider .prev {
+    left: 20px;
+}
+
+.hero-slider .next {
+    right: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 70vh;
+    }
+    .hero-slider .slide img {
+        height: 70vh;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    .search-form .form-control {
+        padding: 8px 12px;
+    }
+    .search-form .search-btn {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+    .search-form .search-btn .d-md-inline {
+        display: none !important;
+    }
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    .floating-whatsapp .whatsapp-tooltip {
+        right: 60px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}

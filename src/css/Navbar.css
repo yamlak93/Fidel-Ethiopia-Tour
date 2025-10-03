@@ -1,0 +1,106 @@
+/* ---------- Top Bar ---------- */
+.top-bar {
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 2000;
+  position: relative;
+  transition: top 0.3s ease-in-out;
+}
+
+/* ✅ Fidel Logo White Background (large devices default) */
+.logo-wrapper {
+  background-color: #ffffff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  left: 0;
+  position: absolute;
+}
+
+.logo-img {
+  height: 100px;  /* large devices */
+  width: auto;
+  padding-top: 20px;
+}
+
+.contact-section {
+  margin-left: 120px; /* shift to right, since logo overlaps */
+}
+
+.languageBtn {
+  font-weight: 500;
+}
+
+/* Dropdown should appear above navbar */
+.language-dropdown-container .dropdown-menu {
+  z-index: 3000 !important;
+}
+
+/* ---------- Main Navbar ---------- */
+.main-nav {
+  background-color: #ffffff;
+  padding: 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 60px; /* sits below top bar */
+  z-index: 1500;
+  transition: top 0.3s ease-in-out;
+}
+
+/* When top bar disappears, bring navbar up */
+.main-nav.sticky-at-top {
+  top: 0 !important;
+}
+
+/* Make main navbar text green */
+.main-nav .nav-link {
+  color: #28a745 !important;
+  font-weight: 500;
+}
+
+.main-nav .nav-link:hover {
+  color: #000000 !important;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 992px) {
+  .top-bar {
+    font-size: 12px;
+    height: auto;
+    padding: 5px 0;
+  }
+
+  /* ✅ Reset logo wrapper for small devices */
+  .logo-wrapper {
+    position: relative;     /* no absolute */
+    height: auto;
+    padding: 5px 12px;
+    background-color: #ffffff;
+  }
+
+  .logo-img {
+    height: 50px;  /* smaller logo for mobiles */
+    padding-top: 0;
+  }
+
+  .contact-section {
+    margin-left: 0; /* no forced spacing */
+  }
+
+  .main-nav {
+    top: 0 !important; /* On mobile navbar is always at top */
+  }
+}
+/* ✅ Show dropdown on hover (desktop only) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* align directly under nav item */
+  }
+}

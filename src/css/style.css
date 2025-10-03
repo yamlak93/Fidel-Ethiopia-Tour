@@ -1,0 +1,697 @@
+/* ==============================================
+GLOBAL STYLES AND RESETS
+==============================================
+*/
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ==============================================
+HEADER & NAVIGATION
+==============================================
+*/
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 14px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.navContainer {
+    /* Use the theme green for the contact bar background */
+    background-color: #28a745; 
+}
+
+.contact-section {
+    flex: 1;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact-section a {
+    color: #ffffff !important;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: opacity 0.3s;
+}
+
+.contact-section a:hover {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+
+/* Language Button */
+.languageBtn {
+    background-color: #28a745;
+    color: white !important;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.languageBtn:hover {
+    background-color: #218838;
+}
+
+/* Main Nav Styles */
+.main-nav {
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    height: 60px;
+}
+
+.main-nav.hidden {
+    transform: translateY(-100%);
+}
+
+.main-nav .nav-link {
+    color: #28a745 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important; /* Standard padding for links */
+}
+
+.main-nav .nav-link:hover {
+    color: #218838 !important;
+}
+
+.main-nav .dropdown-toggle::after {
+    border-top-color: #28a745;
+}
+
+.main-nav .dropdown-menu {
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.main-nav .dropdown-item {
+    color: #495057;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #28a745;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 0;
+    margin: 0;
+    background-color: white;
+    width: 300px;
+}
+
+.logo-img {
+    margin-top: 0;
+    width: 250px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/* ==============================================
+HERO SECTION (SLIDER & SEARCH)
+==============================================
+*/
+.hero-slider {
+    position: relative;
+    /* Adjusted height to be full viewport minus the two header bars (approx 120px) */
+    height: calc(100vh - 120px); 
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+.hero-slider .slide img {
+    width: 100%;
+    height: 100%; /* Cover the full height of the slider container */
+    object-fit: cover;
+}
+
+/* Search Container (Adjusted to look like the image) */
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 90%;
+    max-width: 650px; /* Wider search container */
+    text-align: center;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal; /* Removed italic */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-form {
+    /* Glassmorphism effect */
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 5px; /* Thinner padding */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.search-form .input-group {
+    box-shadow: none;
+    background: transparent;
+    flex-grow: 1;
+}
+
+.search-form .form-control {
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+}
+
+.search-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.search-form .search-btn {
+    /* Button style to match the image: White circle with green icon */
+    border: none;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 50%;
+    color: #28a745;
+    font-size: 1.5rem;
+    box-shadow: none;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.search-form .search-btn:hover {
+    background: #f0f0f0;
+    transform: none;
+}
+
+/* Floating WhatsApp Button (Matched to include "Chat with us" text) */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.floating-whatsapp::before {
+    content: "Chat with us";
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-whatsapp:hover {
+    background: #20BA5A;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff0000;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Indicators and Controls - Unchanged */
+.hero-slider .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.hero-slider .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-slider .indicator.active {
+    background: white;
+}
+
+.hero-slider .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 5;
+    transition: background 0.3s;
+}
+
+.hero-slider .controls:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-slider .prev {
+    left: 20px;
+}
+
+.hero-slider .next {
+    right: 20px;
+}
+
+
+/* ==============================================
+CONTENT SECTIONS
+==============================================
+*/
+.who-we-are-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    color: #28a745;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.who-we-are-section .lead {
+    font-size: 1.25rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.who-we-are-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Tour Experiences Section */
+.tour-experiences-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.tour-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    /* Resetting horizontal scroll properties from previous state for the grid */
+    min-width: unset; 
+    flex: unset; 
+    margin-right: unset;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.tour-card .card-body {
+    padding: 1.5rem;
+    background: white;
+    position: relative;
+}
+
+.tour-card .card-title {
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.tour-card .card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.price-tag {
+    text-align: center;
+    margin-top: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-left: 0;
+    z-index: 1;
+}
+
+.price-box {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-right: 0;
+}
+
+.price-box span {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Why Travel with Us Section - Styles to match the image's grid and card design */
+.why-travel-section {
+    padding: 80px 0;
+    background-color: white; /* Changed background to white to match the image */
+}
+
+.why-travel-section .section-title {
+    color: #28a745;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.why-travel-section .lead {
+    font-size: 1.25rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Horizontal Scroll Overrides: Force to act as a grid */
+.horizontal-scroll-wrapper {
+    position: relative;
+    display: block; /* Removed flex */
+}
+
+.horizontal-scroll-container {
+    /* Enforce grid/wrapping behavior */
+    display: flex; 
+    flex-wrap: wrap; 
+    overflow-x: visible; 
+    gap: 30px;
+    padding-bottom: 0;
+    justify-content: center; /* Center the grid items */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scroll arrows as horizontal scrolling is removed */
+.why-travel-section .scroll-arrow {
+    display: none;
+}
+
+/* Specific styling for the feature cards inside the 'Why Travel with Us' section */
+.why-travel-section .tour-card {
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    transition: none; 
+    cursor: default; 
+    text-align: center;
+    padding: 1rem 0;
+    min-width: 250px; 
+    /* Overriding previous tour-card hover for static features */
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Feature Icon (Card Image Top) */
+.why-travel-section .tour-card .card-img-top {
+    height: 60px; /* Space for the icon */
+    width: 100%;
+    background-size: contain !important;
+    background-position: center !important;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+/* Feature Title Styling (Green, Bold, Italic) */
+.why-travel-section .tour-card .card-title {
+    color: #28a745;
+    font-weight: bold;
+    font-style: italic; 
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Feature Text Styling */
+.why-travel-section .tour-card .card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.why-travel-section .tour-card .card-body {
+    padding: 0.5rem 0;
+}
+
+
+/* ==============================================
+RESPONSIVE ADJUSTMENTS
+==============================================
+*/
+@media (max-width: 992px) {
+    /* Add spacing between vertically stacking cards on smaller screens */
+    .horizontal-scroll-container > .col-lg-4, 
+    .horizontal-scroll-container > .col-md-6 {
+        margin-bottom: 20px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 60vh;
+    }
+    .hero-slider .slide img {
+        height: 60vh;
+    }
+    
+    .top-bar {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .logo-title {
+        font-size: 1rem;
+    }
+    
+    .tagline {
+        font-size: 0.65rem;
+    }
+
+    .contact-section {
+        display: none;
+    }
+    
+    .navContainer {
+        /* Ensure logo and language button stay visible on mobile */
+        justify-content: space-between !important;
+    }
+    .col-auto.pe-3 {
+        padding-right: 0 !important;
+    }
+    .col-auto.ps-3 {
+        padding-left: 0 !important;
+    }
+    
+    .search-container {
+        width: 90%;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-form .form-control,
+    .search-form .search-btn {
+        padding: 12px;
+    }
+
+    .hero-slider .controls {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+    }
+
+    .who-we-are-section,
+    .tour-experiences-section,
+    .why-travel-section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .who-we-are-section .lead,
+    .why-travel-section .lead {
+        font-size: 1.1rem;
+    }
+
+    .who-we-are-section p {
+        font-size: 1rem;
+    }
+
+    .tour-card .card-img-top {
+        height: 200px;
+    }
+
+    .tour-card .card-body {
+        padding: 1rem;
+    }
+
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    .floating-whatsapp::before {
+        content: "Chat with us";
+        right: 60px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .notification-badge {
+        width: 16px;
+        height: 16px;
+        font-size: 0.65rem;
+    }
+}

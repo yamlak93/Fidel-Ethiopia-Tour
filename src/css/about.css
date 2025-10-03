@@ -1,0 +1,147 @@
+.team-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.team-intro h2 {
+  font-size: 2.5rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.team-intro p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.team-hierarchy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder-card {
+  background-color: #fff;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.founder-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #28a745;
+}
+
+.team-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.team-role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.team-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.member-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Core Principles */
+.principles-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.principles-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.principles-header h2 {
+  font-size: 2.5rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.principles-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principle-card {
+  background-color: #f8f8f8;
+  border-left: 6px solid #28a745;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+}
+
+.principle-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.principle-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}

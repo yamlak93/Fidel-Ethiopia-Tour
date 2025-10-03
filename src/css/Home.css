@@ -1,0 +1,509 @@
+/* ==============================================
+CONTENT SECTIONS
+============================================== */
+.who-we-are-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    height: calc(100vh - 120px);
+}
+
+.section-title {
+    color: #28a745;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.who-we-are-section .lead {
+    font-size: 1.25rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.who-we-are-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+/* ==============================================
+CONTENT SECTIONS
+============================================== */
+/* Tour Experiences Section */
+.tour-experiences-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  color: #28a745;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.price-tag {
+  text-align: right;
+  margin-left: auto;
+}
+
+.price-box {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.price-box span {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.icon-above-card {
+  font-size: 2rem;
+  color: #28a745;
+}
+
+@media (max-width: 768px) {
+  .tour-experiences-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .icon-above-card {
+    font-size: 1.5rem;
+  }
+}
+/* ==============================================
+RESPONSIVE ADJUSTMENTS
+============================================== */
+@media (max-width: 768px) {
+    .who-we-are-section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .who-we-are-section .lead,
+    .why-travel-section .lead {
+        font-size: 1.1rem;
+    }
+
+    .who-we-are-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Why Travel with Us Section */
+/* Why Us / Horizontal Scroll - Fixed */
+.why-us-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  color: #28a745;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.horizontal-scroll-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The scroll content is a single non-wrapping row */
+.horizontal-scroll-content {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  flex-wrap: nowrap;
+}
+
+.horizontal-scroll-content > * {
+  flex-shrink: 0;
+}
+
+.horizontal-scroll-content::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .why-us-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .scroll-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ==============================================
+TOP DESTINATION AND ATTRACTION SECTIONS
+============================================== */
+.top-destination-section,
+.top-attraction-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  color: #28a745;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-destination-section,
+  .top-attraction-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================================
+TESTIMONIAL SECTION
+============================================== */
+.testimonial-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  color: #28a745;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.testimonial-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.testimonial-summary {
+  flex: 0 0 auto;
+  width: 250px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.summary-rating h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000000ff;
+  font-weight: bold;
+}
+
+.summary-rating .star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.testimonial-scroll {
+  flex: 1;
+}
+
+.horizontal-scroll-container {
+  position: relative;
+  overflow: hidden;
+  /* Add padding to the side to give space for buttons on smaller screens, 
+     but this might need adjustment based on container padding */
+}
+
+.horizontal-scroll-content {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  flex-wrap: nowrap;
+}
+
+.horizontal-scroll-content > * {
+  flex-shrink: 0;
+  max-width: 500px; /* Matches TestimonialCard maxWidth */
+  width: 100%;
+}
+
+.horizontal-scroll-content::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  /* Added a slight offset for desktop view */
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button:hover {
+  background-color: #218838;
+}
+
+/* --- Tablet/Medium Screens (769px to 992px) --- */
+@media (min-width: 769px) and (max-width: 992px) {
+  .testimonial-row {
+    gap: 20px; /* Slightly reduced gap */
+  }
+
+  .testimonial-summary {
+    width: 200px; /* Reduced width to fit better with smaller cards */
+  }
+
+  .horizontal-scroll-content > * {
+    max-width: 400px; /* Reduced card width for tablets */
+  }
+}
+
+
+/* --- Mobile/Small Screens (up to 768px) --- */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .testimonial-row {
+    flex-direction: column;
+    align-items: center; /* Center items in the column */
+    gap: 20px;
+  }
+
+  .testimonial-summary {
+    width: 90%; /* Use a percentage for summary width */
+    max-width: 400px; /* Cap the max width */
+    margin-bottom: 20px;
+  }
+  
+  /* Full width for the scroll container to utilize space */
+  .testimonial-scroll {
+    width: 100%; 
+  }
+
+  /* Add padding to the container to keep buttons visible inside it */
+  .horizontal-scroll-container {
+      padding: 0 45px; 
+      box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+
+  .horizontal-scroll-content {
+    gap: 15px; /* Reduced gap for mobile */
+    /* Remove padding-bottom since scroll buttons are fixed now */
+    padding-bottom: 0; 
+  }
+
+  .horizontal-scroll-content > * {
+    max-width: 280px; /* Further reduced card width for mobile */
+    /* Adjust width to ensure cards don't jump too much on scroll */
+    width: calc(100vw - 100px); 
+  }
+
+  .scroll-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    top: 45%; /* Slightly adjust vertical position */
+  }
+  
+  /* Adjust button position to be relative to the viewport/parent with padding */
+  .scroll-button.left {
+    left: 5px; 
+  }
+
+  .scroll-button.right {
+    right: 5px;
+  }
+}
+
+/* ==============================================
+FOOTER SECTION
+============================================== */
+.footer-section {
+  padding: 60px 0 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.footer-title {
+  color: #28a745;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #28a745;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #28a745;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 40px 0 20px;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+  }
+}
