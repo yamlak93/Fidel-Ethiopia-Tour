@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../css/Navbar.css";
 import FidelLogo from "../assets/fidelLogo.png";
-import { FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
     <>
       {/* ✅ Top Bar */}
       <div className="top-bar">
-        <div className="container-fluid">
+        <div className="container-fluid position-relative">
           <div className="row align-items-center g-0 navContainer">
             {/* Fidel Logo Area */}
             <div className="col-auto pe-3 logo-wrapper">
@@ -42,7 +42,7 @@ const Navbar = () => {
               </a>
             </div>
 
-            {/* ✅ Contact Section */}
+            {/* Contact Section */}
             <div className="col d-none d-md-block contact-section text-white px-3 py-1">
               <div className="row justify-content-center">
                 <div className="col-auto">
@@ -63,18 +63,18 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* ✅ Language Dropdown */}
+            {/* Language Dropdown (Right Corner) */}
             <div className="col-auto ps-3 language-dropdown-container">
               <div className="dropdown">
                 <button
-                  className="btn btn-link dropdown-toggle bg-light languageBtn text-dark"
+                  className="btn languageBtn text-white"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Language
+                  <FaGlobe size={20} />
                 </button>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu dropdown-menu-end">
                   <li>
                     <a className="dropdown-item" href="#">
                       English
